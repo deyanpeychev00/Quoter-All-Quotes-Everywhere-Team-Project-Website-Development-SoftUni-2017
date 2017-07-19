@@ -26,9 +26,36 @@ module.exports = {
 
     deletePost: (req,res) => {
         let id = req.params.id;
-        User.findOneAndRemove({_id: id}).then(user => {
-            user.prepareDelete();
-            res.redirect('/');
-        })
+
+        User.findById(id).then(user => {
+
+            if(user.isAdmin.length !== 1){
+                User.findOneAndRemove({_id: id}).then(user => {
+                    user.prepareDelete();
+                    User.find({}).then(users => {
+
+                        for(let user of users) {
+                            user.isInRole('Admin').then(isAdmin => {
+                                user.isAdmin = isAdmin;
+                            });
+                        }
+
+                        res.render('admin/user/all', {users: users})
+                    });
+                });
+            }
+            else {
+                User.find({}).then(users => {
+
+                    for(let user of users) {
+                        user.isInRole('Admin').then(isAdmin => {
+                            user.isAdmin = isAdmin;
+                        });
+                    }
+
+                    res.render('admin/user/all', {error: "Admin user cannot be deleted!", users: users});
+                });
+            }
+        });
     }
 };

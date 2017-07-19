@@ -8,6 +8,7 @@ module.exports = {
 
     wall: (req, res) => {
         Article.find({}).limit(100).populate('author').sort('-date').then(articles => {
+            articles = articles.sort((a,b) => a.date <= b.date);
             res.render('home/wall',{articles: articles});
         })
     },
