@@ -90,7 +90,6 @@ As mentioned above, there are 2 user roles on the site: `User` and `Admin`. Upon
 The aim of the project is to create a blog system for sharing quotes on different topics to attract users from all over the world and to unite them in a circle in which each user has the complete freedom to express himself by quotes from different authors, even personally his.
 ### Future Development
 + Add a profile photo (avatar) to each user.
-+ Add an option to change the user role for each user in the admin panel.
 + Add a share option to a social network post via URL.
 + Distribution of the system to attract users from different parts of the world.
 ## Sources of Information
