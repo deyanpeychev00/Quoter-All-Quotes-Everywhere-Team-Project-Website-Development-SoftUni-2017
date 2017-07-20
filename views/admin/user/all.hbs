@@ -2,26 +2,30 @@
     <h3 class="header center teal-text text-lighten-2">Admin Panel</h3>
     <div class="divider col s6 offset-s2 teal-text lighten-2"></div>
     <br>
-    <table class="highlight">
+    <table class="highlight responsive-table">
         <thead>
         <tr>
             <th>ID</th>
             <th>Username</th>
             <th>Email</th>
+            <th>Role</th>
             <th>Actions</th>
         </tr>
         </thead>
 
         <tbody>
         {{#each users}}
-            <tr>
-                <td>{{ this.id }}</td>
-                <td>{{ this.fullName }}</td>
-                <td>{{ this.email }}</td>
-                <td>
-                    <a href="/admin/user/delete/{{this.id}}"><span class="chip"><b>Delete</b></span></a>
-                </td>
-            </tr>
+                <tr>
+                    <td>{{ this.id }}</td>
+                    <td>{{ this.fullName }}</td>
+                    <td>{{ this.email }}</td>
+                    <td>{{ this.roleName }}</td>
+                    <td>
+                        <a href="/admin/user/edit/{{this.id}}"><span class="chip"><b>Edit</b></span></a>
+                        <a href="/admin/user/delete/{{this.id}}"><span class="chip"><b>Delete</b></span></a>
+                    </td>
+                </tr>
+
         {{/each}}
         </tbody>
     </table>

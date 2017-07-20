@@ -1,0 +1,44 @@
+<div class="container body-content span=8 offset=2">
+    <div class="well">
+        <form class="col s10 offset-s1" action="/admin/user/edit/{{userToEdit.id}}" method="post">
+            <h3 class="header center teal-text text-lighten-2">Edit User</h3>
+            <div class="divider col s6 offset-s2 teal-text lighten-2"></div>
+            <br>
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <div class="col-sm-4 ">
+                        <i class="material-icons">language</i> Email
+                        <input class="form-control" id="email" value="{{ userToEdit.email }}" name="email" required type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <div class="col-sm-4">
+                        <i class="material-icons">person_pin</i> Username
+                        <input type="text" class="form-control" id="fullName" value="{{ userToEdit.fullName }}" name="fullName">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <div class="col-sm-4">
+                        <i class="material-icons">person_pin</i> Role
+                        <input type="text" class="form-control" id="roleName" value="{{ userToEdit.roleName }}" name="roleName">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-4 center">
+                    <a type="reset" class="btn btn-default" href="/admin/user/all">Cancel</a>
+                    <button type="submit" class="btn btn-primary grey">Edit "<b>{{ userToEdit.fullName }}"</b></button>
+                </div>
+                <br><br>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+

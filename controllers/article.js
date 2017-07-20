@@ -10,7 +10,7 @@ function validateArticle(articleArgs, req) {
         errorMsg = 'Invalid content!';
     }
 
-    return errorMsg
+    return errorMsg;
 }
 
 module.exports = {
@@ -61,7 +61,7 @@ module.exports = {
     editGet: (req, res) => {
         let id = req.params.id;
         Article.findById(id).then(article => {
-            if(req.user.isAuthor(article) || req.user.isAdmin.length === 1){
+            if(req.user.isAuthor(article) || req.user.roleName === 'Admin'){
                 res.render('article/edit', article)
 
             }
@@ -92,7 +92,7 @@ module.exports = {
         let id = req.params.id;
 
         Article.findById(id).then(article => {
-            if(req.user.isAuthor(article) || req.user.isAdmin.length === 1){
+            if(req.user.isAuthor(article) || req.user.roleName === 'Admin'){
                 res.render('article/delete', article)
             }
             else {
