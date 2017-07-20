@@ -2565,7 +2565,13 @@ a {
       -ms-flex-align: center;
           align-items: center;
 }
-
+.quote-container{
+  padding-top:70px;
+}
+.author-image{
+  height:250px !important;
+  width:250px !important;
+}
 .valign-wrapper .valign {
   display: block;
 }
@@ -2746,12 +2752,15 @@ video.responsive-video {
 .breadcrumb:last-child {
   color: #fff;
 }
-
 .parallax-container {
   position: relative;
   overflow: hidden;
-  height: 500px;
+  height: 100%;
 }
+@media only screen and (min-width: 760px){
+
+}
+
 
 .parallax {
   position: absolute;
@@ -4303,9 +4312,11 @@ nav .input-field label.active i {
 }
 
 .navbar-fixed {
-  position: relative;
-  height: 56px;
-  z-index: 997;
+  top: 0;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
 }
 
 .navbar-fixed nav {

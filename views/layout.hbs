@@ -4,8 +4,9 @@
     <title>Quoter - All quotes everywhere.</title>
     <link rel="icon" href="/stylesheets/images/favicon.png" type="styles/images/favicon.png"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="/stylesheets/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/stylesheets/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="/stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body style="min-height: 100%; padding-bottom: 0">
 <header>
@@ -15,6 +16,7 @@
                     <div class="nav-wrapper container">
                         <a id="logo-container" href="/" class="brand-logo">QUOTER</a>
                         <ul class="right hide-on-med-and-down">
+                            <li><a href="/"><i class="material-icons">home</i></a></li>
                             <li><a href="/user/details"><b class="chip">{{user.fullName}}</b></a></li>
                             <li><a href="/admin/user/all">Admin Panel</a></li>
                             <li><a href="/wall">Wall</a></li>
@@ -23,6 +25,7 @@
                         </ul>
 
                         <ul id="nav-mobile" class="side-nav" id="tabs-swipe-demo">
+                            <li><a href="/"><i class="material-icons">home</i></a></li>
                             <li><a href="/user/details">Welcome, <b>{{user.fullName}}</b></a></li>
                             <li><a href="/user/details">Admin Panel</a></li>
                             <li><a href="/wall">Wall</a></li>
@@ -38,6 +41,7 @@
                     <div class="nav-wrapper container">
                         <a id="logo-container" href="/" class="brand-logo">QUOTER</a>
                         <ul class="right hide-on-med-and-down">
+                            <li><a href="/"><i class="material-icons">home</i></a></li>
                             <li><a href="/user/details"><b class="chip">{{user.fullName}}</b></a></li>
                             <li><a href="/wall">Wall</a></li>
                             <li><a href="/article/create">New Post</a></li>
@@ -45,6 +49,7 @@
                         </ul>
 
                         <ul id="nav-mobile" class="side-nav" id="tabs-swipe-demo">
+                            <li><a href="/"><i class="material-icons">home</i></a></li>
                             <li><a href="/user/details">Welcome, <b>{{user.fullName}}</b></a></li>
                             <li><a href="/wall">Wall</a></li>
                             <li><a href="/article/create">New Post</a></li>
@@ -60,12 +65,14 @@
             <div class="nav-wrapper container">
                 <a id="logo-container" href="/" class="brand-logo">QUOTER</a>
                 <ul class="right hide-on-med-and-down">
+                    <li><a href="/"><i class="material-icons">home</i></a></li>
                     <li><a href="/wall">Wall</a></li>
                     <li><a href="/user/register">Register</a></li>
                     <li><a href="/user/login">Login</a></li>
                 </ul>
 
                 <ul id="nav-mobile" class="side-nav" id="tabs-swipe-demo">
+                    <li><a href="/"><i class="material-icons">home</i></a></li>
                     <li><a href="/wall">Wall</a></li>
                     <li><a href="/user/register">Register</a></li>
                     <li><a href="/user/login">Login</a></li>

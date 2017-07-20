@@ -4,20 +4,19 @@
     <title>Parallax Template - Materialize</title>
 </head>
 <body>
-<div id="index-banner top" class="parallax-container z-depth-5">
-    <div class="section no-pad-bot">
-        <div class="container">
-            <br><br>
-            <h1 class="header center teal-text text-lighten-2">Express yourself.</h1>
-            <div class="row center">
-                <h5 class="header col s12 light">Share your thoughts with us.</h5>
+<div id="index-banner top" class="mobile-parallax parallax-container z-depth-5 ">
+    <div class="no-pad-bot">
+        <div class="container " style="position: relative">
+            <div>
+                <h1 class="center teal-text text-lighten-2">Express yourself.</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">Share your thoughts with us.</h5>
+                </div>
+                <div class="row center">
+                    <a href="/article/create" id="download-button"
+                       class="btn-large waves-effect waves-light teal lighten-1 card-panel hoverable">New Post</a>
+                </div>
             </div>
-            <div class="row center">
-                <a href="/article/create" id="download-button"
-                   class="btn-large waves-effect waves-light teal lighten-1 card-panel hoverable">New Post</a>
-            </div>
-            <br><br>
-
         </div>
     </div>
     <div class="parallax"><img src="/stylesheets/images/background4.jpg" alt="Unsplashed background img 1"></div>
@@ -38,7 +37,7 @@
                         </p>
 
                         <small class="author chip" style="margin-bottom: 20px">
-                            Author: <b>{{this.author.fullName}}</b>
+                            By: <b>{{this.author.fullName}}</b>
                         </small>
                         <div>
                             <div class="right">
