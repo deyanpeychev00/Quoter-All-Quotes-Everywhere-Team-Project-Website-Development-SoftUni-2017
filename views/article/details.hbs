@@ -36,7 +36,7 @@
                 {{#if user}}
                     <form method="POST" action="/article/details/{{article.id}}">
                         <div class="left">
-                            <button class="hoverable btn btn-default btn-xs" type="submit"><i class="small material-icons">thumb_up</i><span style="padding-left: 10px">{{article.likesCount}}</span></button>
+                            <button class="hoverable btn btn-default btn-xs blue" type="submit"><i class="small material-icons">{{icon}}</i><span style="padding-left: 10px">{{article.likesCount}}</span></button>
                         </div>
                     </form>
                 {{/if}}

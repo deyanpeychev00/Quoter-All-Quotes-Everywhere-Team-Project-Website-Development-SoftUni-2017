@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="input-field col s4 offset-s4">
                     <div class="col-sm-4 ">
-                        <i class="material-icons">language</i> Email
+                        <i class="material-icons green-text">language</i> Email
                         <input class="form-control" id="email" value="{{ userToDelete.email }}" name="email" required type="text" disabled>
                     </div>
                 </div>
@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="input-field col s4 offset-s4">
                     <div class="col-sm-4">
-                        <i class="material-icons">person_pin</i> Username
+                        <i class="material-icons red-text">face</i> Username
                         <input type="text" class="form-control" id="fullName" value="{{ userToDelete.fullName }}" name="fullName" disabled>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
             {{/if}}
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-4 center">
-                    <a type="reset" class="btn btn-default" href="/admin/user/all">Cancel</a>
+                    <a type="reset" class="btn btn-default grey" href="/admin/user/all">Cancel</a>
                     <button type="submit" class="btn btn-primary red">Delete "<b>{{ userToDelete.fullName }}"</b></button>
                 </div>
                 <br><br>

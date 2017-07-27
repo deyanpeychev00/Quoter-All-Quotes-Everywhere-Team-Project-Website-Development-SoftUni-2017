@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Article = mongoose.model('Article');
-
+let id = 0;
 module.exports = {
     index: (req, res) => {
         res.render('home/index');
@@ -8,9 +8,9 @@ module.exports = {
 
     wall: (req, res) => {
         Article.find({}).populate('author').sort('-date').then(articles => {
-            let pagesNumber = Math.ceil(Array.from(articles).length/10);
-            console.log(pagesNumber);
             articles = articles.sort((a,b) => a.date <= b.date);
+            articles.forEach(a => a.showID = id++);
+
             res.render('home/wall',{articles: articles});
         })
     },

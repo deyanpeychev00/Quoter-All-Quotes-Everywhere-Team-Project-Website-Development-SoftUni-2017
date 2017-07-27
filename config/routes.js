@@ -3,7 +3,6 @@ const articleController = require('./../controllers/article');
 const homeController = require('./../controllers/home');
 const adminController = require('./../controllers/admin/admin');
 
-
 module.exports = (app) => {
     app.get('/', homeController.index);
 
@@ -41,5 +40,8 @@ module.exports = (app) => {
 
     app.get('/admin/user/edit/:id', adminController.user.editUserGet);
     app.post('/admin/user/edit/:id', adminController.user.editUserPost);
+
+    app.get('/user/settings/:id', userController.settingsGet);
+    app.post('/user/settings/:id', userController.settingsPost);
 };
 

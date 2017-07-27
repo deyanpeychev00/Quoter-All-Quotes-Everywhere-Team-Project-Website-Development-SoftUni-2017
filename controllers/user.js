@@ -2,6 +2,8 @@ const User = require('mongoose').model('User');
 const Role = require('mongoose').model('Role');
 const encryption = require('./../utilities/encryption');
 
+
+
 module.exports = {
     registerGet: (req, res) => {
         res.render('user/register');
@@ -109,6 +111,20 @@ module.exports = {
     },
 
     detailsGet: (req, res) =>{
-        res.render('user/details');
+        let user = req.user;
+        user.articles = user.articles.sort((a,b) => a.date <= b.date);
+
+        res.render('user/details', {user: user});
+    },
+
+    settingsGet: (req, res) =>{
+        let id = req.params.id;
+        User.findById(id).then(user => {
+            res.render('user/settings', {user: user});
+        });
+    },
+
+    settingsPost: (req, res) => {
+
     }
 };

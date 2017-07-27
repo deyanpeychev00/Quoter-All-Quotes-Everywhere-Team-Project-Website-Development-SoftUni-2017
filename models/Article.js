@@ -6,7 +6,8 @@ let articleSchema = mongoose.Schema({
     author: {type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User'},
     date: {type: Date, default: Date()},
     likes: {type: []},
-    likesCount: {type: Number, default: 0}
+    likesCount: {type: Number, default: 0},
+    showID: {type: Number}
 });
 
 const Article = mongoose.model('Article', articleSchema);

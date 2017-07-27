@@ -1,7 +1,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <title>Parallax Template - Materialize</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <title>Wall</title>
 </head>
 <body>
 <div id="index-banner top" class="mobile-parallax parallax-container z-depth-5 ">
@@ -27,7 +28,7 @@
         {{#each articles}}
             <div class="new-article">
                 <div class="col s12 m12" style="padding: 20px">
-                    <div>
+                    <div class="article-container" id="{{this.showID}}">
                         <div class="section">
 
                             <header>
@@ -58,6 +59,3 @@
         <i class="material-icons">navigation</i>
     </a>
 </div>
-<ul class="pagination center">
-
-</ul>

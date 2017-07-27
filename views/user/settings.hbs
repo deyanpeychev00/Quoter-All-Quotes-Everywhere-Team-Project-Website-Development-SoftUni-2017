@@ -1,0 +1,55 @@
+<div class="container body-content span=8 offset=2">
+    <div class="well">
+        <form class="col s10 offset-s1" action="/user/settings/{{user.id}}" method="post">
+            <h3 class="header center teal-text text-lighten-2">Settings</h3>
+            <div class="divider col s6 offset-s2 teal-text lighten-2"></div>
+            <br>
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <div class="col-sm-4 ">
+                        <i class="material-icons green-text">language</i> Email
+                        <input class="form-control" id="email" value="{{ user.email }}" name="email" required type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <div class="col-sm-4">
+                        <i class="material-icons red-text">face</i> Username
+                        <input type="text" class="form-control" id="fullName" value="{{ user.fullName }}" name="fullName">
+                    </div>
+                </div>
+            </div>
+            <div class="row center">
+                <span class="chip">Set new password (optionally)</span>
+            </div>
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <div class="col-sm-4">
+                        <i class="material-icons blue-text">lock</i> New password
+                        <input type="password" class="form-control" id="password" value="" name="password">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <div class="col-sm-4">
+                        <i class="material-icons blue-text">lock</i> Confirm password
+                        <input type="password" class="form-control" id="confrimPassword" value="" name="confirmPassword">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-4 center">
+                    <a type="reset" class="btn btn-default grey" href="/admin/user/all">Cancel</a>
+                    <button type="submit" class="btn btn-primary green">Save settings</button>
+                </div>
+                <br><br>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+

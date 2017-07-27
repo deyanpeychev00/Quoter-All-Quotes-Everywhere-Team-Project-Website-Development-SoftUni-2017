@@ -52,10 +52,21 @@ module.exports = {
     },
 
     detailsGet: (req, res) => {
+        let currentUserID = req.user.id;
         let id = req.params.id;
+        let icon = '';
 
         Article.findById(id).populate('author').then(article => {
-            res.render('article/details', {article: article});
+
+            if (article.likes.indexOf(currentUserID) === -1) {
+                article.likes.push(currentUserID);
+                icon = 'favorite_border';
+            }else{
+                index = article.likes.indexOf(currentUserID);
+                article.likes.splice(index,1);
+                icon = 'favorite';
+            }
+            res.render('article/details', {article: article, icon:icon});
         })
     },
 
@@ -125,19 +136,21 @@ module.exports = {
     like: (req,res) =>{
         let currentUserID = req.user.id;
         let id = req.params.id;
-
+        let icon = '';
         Article.findById(id).populate('author').then(article => {
 
             if (article.likes.indexOf(currentUserID) === -1) {
                 article.likes.push(currentUserID);
+                icon = 'favorite';
             }else{
                 index = article.likes.indexOf(currentUserID);
                 article.likes.splice(index,1);
+                icon = 'favorite_border';
             }
 
             article.likesCount = article.likes.length;
             article.save();
-            res.render('article/details', {article: article})
+            res.render('article/details', {article: article, icon:icon})
         })
     }
 };
