@@ -17,35 +17,36 @@
 </div>
 <div class="container body-content">
     <div class="row">
-        <div class ="col-md-12 hoverable" style="padding: 50px">
+        <div class ="col-md-12" style="padding: 50px">
             <article>
                 <header>
-                    <h2>{{title}}</h2>
+                    <h2>{{article.title}}</h2>
                 </header>
                 <div class="divider"></div>
                 <p>
-                    -{{content}}
+                    -{{article.content}}
                 </p>
                 <small class="author chip">
-                   By:  <b>{{author.fullName}}</b>
+                   By:  <b>{{article.author.fullName}}</b>
                 </small>
                 <br>
                 <small class="author">
-                    Date published: <b>{{date}}</b>
+                    Date published: <b>{{article.date}}</b>
                 </small>
                 {{#if user}}
-                    <form method="POST" action="/article/details/{{this.id}}">
+                    <form method="POST" action="/article/details/{{article.id}}">
                         <div class="left">
-                            <button class="btn btn-default btn-xs" type="submit"><i class="small material-icons">thumb_up</i><span style="padding-left: 10px">{{this.likesCount}}</span></button>
+                            <button class="hoverable btn btn-default btn-xs" type="submit"><i class="small material-icons">thumb_up</i><span style="padding-left: 10px">{{article.likesCount}}</span></button>
                         </div>
                     </form>
                 {{/if}}
                 <div class="right">
                     {{#if user}}
-                        <a id="authorval" class="waves-effect waves-light btn darken-2 yellow" href="/article/edit/{{id}}"><i class="material-icons">mode_edit</i></a>
-                        <a id="authorval" class="waves-effect waves-light btn red" href="/article/delete/{{id}}"><i class="material-icons">delete</i></a>
+                        <a id="authorval" class="hoverable waves-effect waves-light btn darken-2 yellow" href="/article/edit/{{article.id}}"><i class="material-icons">mode_edit</i></a>
+                        <a id="authorval" class="hoverable waves-effect waves-light btn red" href="/article/delete/{{article.id}}"><i class="material-icons">delete</i></a>
                     {{/if}}
-                    <a class="btn btn-default btn-xs" href="/"><i class="material-icons">home</i></a>
+
+                    <a class="hoverable btn btn-default btn-xs icon-preview" href="/wall">Back to wall</a>
                 </div>
 
             </article>

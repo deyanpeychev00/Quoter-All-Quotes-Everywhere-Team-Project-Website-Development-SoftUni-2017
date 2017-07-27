@@ -15,6 +15,7 @@ function validateArticle(articleArgs, req) {
 
 module.exports = {
 
+
     createGet: (req, res) => {
         if (!req.isAuthenticated()) {
             let returnUrl = '/article/create';
@@ -42,7 +43,7 @@ module.exports = {
             req.user.articles.push(article);
             req.user.save(err => {
                 if (err) {
-                    res.redirect('/', {error: err.message});
+                    res.redirect('article/create', {error: err.message});
                 } else {
                     res.redirect('/wall');
                 }
@@ -54,7 +55,7 @@ module.exports = {
         let id = req.params.id;
 
         Article.findById(id).populate('author').then(article => {
-            res.render('article/details', article);
+            res.render('article/details', {article: article});
         })
     },
 
@@ -62,11 +63,11 @@ module.exports = {
         let id = req.params.id;
         Article.findById(id).then(article => {
             if(req.user.isAuthor(article) || req.user.roleName === 'Admin'){
-                res.render('article/edit', article)
+                res.render('article/edit', {article: article})
 
             }
             else {
-                res.render('home/index', {error: "You cannot edit this post!"});}
+                res.render('article/details', {error: "You cannot edit this post!", article: article });}
         });
     },
 
@@ -78,7 +79,7 @@ module.exports = {
         let errorMsg = validateArticle(articleArgs, req);
 
         if (errorMsg) {
-            res.render('article/edit', {error: errorMsg})
+            res.render('article/edit', {error: errorMsg })
         }
         else {
             Article.update({_id: id}, {$set: {title: articleArgs.title, content: articleArgs.content}})
@@ -93,10 +94,10 @@ module.exports = {
 
         Article.findById(id).then(article => {
             if(req.user.isAuthor(article) || req.user.roleName === 'Admin'){
-                res.render('article/delete', article)
+                res.render('article/delete', {article: article})
             }
             else {
-                res.render('home/index', {error: "You cannot delete this post!"});
+                res.render('home/index', {error: "You cannot delete this post!", article: article});
             }
         });
     },
@@ -136,7 +137,7 @@ module.exports = {
 
             article.likesCount = article.likes.length;
             article.save();
-            res.render('article/details', article)
+            res.render('article/details', {article: article})
         })
     }
 };

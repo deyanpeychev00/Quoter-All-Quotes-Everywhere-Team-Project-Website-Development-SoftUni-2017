@@ -1,6 +1,6 @@
 <div class="container body-content span=8 offset=2">
     <div class="well">
-        <form class="col s10 offset-s1" method="POST" action="/article/delete/{{id}}">
+        <form class="col s10 offset-s1" method="POST" action="/article/delete/{{article.id}}">
             <h3 class="header center teal-text text-lighten-2">Delete Post</h3>
             <div class="divider col s6 offset-s2 teal-text lighten-2"></div>
             <br>
@@ -8,7 +8,7 @@
                 <div class="input-field col s4 offset-s4">
                     <div class="col-sm-4 ">
                         <i class="material-icons">message</i> Quote
-                        <input type="text" class="form-control" id="articleTitle" placeholder="Article Title" value="{{title}}" name="title" disabled >
+                        <input type="text" class="form-control" id="articleTitle" placeholder="Article Title" value="{{article.title}}" name="title" disabled >
                     </div>
                 </div>
             </div>
@@ -16,13 +16,13 @@
                 <div class="input-field col s4 offset-s4">
                     <div class="col-sm-4">
                         <i class="material-icons">person_pin</i> Author
-                        <input type="text" class="form-control" id="articleContent" name="content" value="{{content}}" disabled>
+                        <input type="text" class="form-control" id="articleContent" name="content" value="{{article.content}}" disabled>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-4 center">
-                    <a type="reset" class="btn btn-default" href="/article/details/{{id}}">Cancel</a>
+                    <a type="reset" class="btn btn-default" href="/article/details/{{article.id}}">Cancel</a>
                     <button type="submit" class="btn btn-primary red">Delete</button>
                 </div>
                 <br><br>

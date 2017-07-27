@@ -7,7 +7,9 @@ module.exports = {
     },
 
     wall: (req, res) => {
-        Article.find({}).limit(100).populate('author').sort('-date').then(articles => {
+        Article.find({}).populate('author').sort('-date').then(articles => {
+            let pagesNumber = Math.ceil(Array.from(articles).length/10);
+            console.log(pagesNumber);
             articles = articles.sort((a,b) => a.date <= b.date);
             res.render('home/wall',{articles: articles});
         })

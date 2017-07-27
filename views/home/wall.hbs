@@ -25,27 +25,29 @@
 <div class="container body-content " id ="posts">
     <div class="row">
         {{#each articles}}
-            <div class="col s12 m12" style="padding: 20px">
+            <div class="new-article">
+                <div class="col s12 m12" style="padding: 20px">
                     <div>
                         <div class="section">
 
-                        <header>
-                            <h4>{{this.title}}</h4>
-                        </header>
+                            <header>
+                                <h4>{{this.title}}</h4>
+                            </header>
                             <div class="divider"></div>
-                        <p>-{{this.content}}
-                        </p>
+                            <p>-{{this.content}}
+                            </p>
 
-                        <small class="author chip" style="margin-bottom: 20px">
-                            By: <b>{{this.author.fullName}}</b>
-                        </small>
-                        <div>
-                            <div class="right">
-                                <a class="btn btn-default btn-xs" href="/article/details/{{this.id}}">Read More</a>
+                            <small class="author chip" style="margin-bottom: 20px">
+                                By: <b>{{this.author.fullName}}</b>
+                            </small>
+                            <div>
+                                <div class="right">
+                                    <a class="hoverable btn btn-default btn-xs" href="/article/details/{{this.id}}">Read More</a>
+                                </div>
                             </div>
                         </div>
-                        </div>
                     </div>
+                </div>
             </div>
         {{/each}}
     </div>
@@ -56,3 +58,6 @@
         <i class="material-icons">navigation</i>
     </a>
 </div>
+<ul class="pagination center">
+
+</ul>
