@@ -14,8 +14,6 @@ function validateArticle(articleArgs, req) {
 }
 
 module.exports = {
-
-
     createGet: (req, res) => {
         if (!req.isAuthenticated()) {
             let returnUrl = '/article/create';
